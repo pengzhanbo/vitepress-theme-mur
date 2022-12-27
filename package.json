@@ -24,8 +24,9 @@
   },
   "prettier": "@pengzhanbo/prettier-config",
   "devDependencies": {
-    "@pengzhanbo/eslint-config-vue-ts": "^0.2.10",
-    "@pengzhanbo/prettier-config": "^0.2.10",
+    "@pengzhanbo/eslint-config-vue-ts": "^0.2.13",
+    "@pengzhanbo/prettier-config": "^0.2.13",
+    "@types/body-scroll-lock": "^3.1.0",
     "@types/node": "^18.11.17",
     "eslint": "^8.30.0",
     "prettier": "^2.8.1",
@@ -39,5 +40,12 @@
         "@algolia/client-search"
       ]
     }
+  },
+  "dependencies": {
+    "@docsearch/css": "^3.3.0",
+    "@docsearch/js": "^3.3.0",
+    "@vueuse/core": "^9.9.0",
+    "body-scroll-lock": "4.0.0-beta.0",
+    "normalize.css": "^8.0.1"
   }
 }
