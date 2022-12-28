@@ -2,6 +2,7 @@
 import { useData, useRoute } from 'vitepress'
 import { inject } from 'vue'
 import { useSidebar } from '../composables/sidebar.js'
+import VPBlog from './VPBlog.vue'
 import VPDoc from './VPDoc.vue'
 import VPHome from './VPHome.vue'
 import VPPage from './VPPage.vue'
@@ -26,15 +27,17 @@ const NotFound = inject('NotFound')
 
     <VPPage v-else-if="frontmatter.layout === 'page'" />
 
+    <VPBlog v-else-if="frontmatter.layout === 'blog'" />
+
     <VPHome v-else-if="frontmatter.layout === 'home'">
       <template #home-hero-before><slot name="home-hero-before" /></template>
       <template #home-hero-after><slot name="home-hero-after" /></template>
-      <template #home-features-before
-        ><slot name="home-features-before"
-      /></template>
-      <template #home-features-after
-        ><slot name="home-features-after"
-      /></template>
+      <template #home-features-before>
+        <slot name="home-features-before" />
+      </template>
+      <template #home-features-after>
+        <slot name="home-features-after" />
+      </template>
     </VPHome>
 
     <VPDoc v-else>
@@ -43,12 +46,12 @@ const NotFound = inject('NotFound')
       <template #doc-after><slot name="doc-after" /></template>
 
       <template #aside-top><slot name="aside-top" /></template>
-      <template #aside-outline-before
-        ><slot name="aside-outline-before"
-      /></template>
-      <template #aside-outline-after
-        ><slot name="aside-outline-after"
-      /></template>
+      <template #aside-outline-before>
+        <slot name="aside-outline-before" />
+      </template>
+      <template #aside-outline-after>
+        <slot name="aside-outline-after" />
+      </template>
       <template #aside-ads-before><slot name="aside-ads-before" /></template>
       <template #aside-ads-after><slot name="aside-ads-after" /></template>
       <template #aside-bottom><slot name="aside-bottom" /></template>

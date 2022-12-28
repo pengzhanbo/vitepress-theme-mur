@@ -63,7 +63,7 @@ export function useSidebar() {
  */
 export function useCloseSidebarOnEscape(
   isOpen: Ref<boolean>,
-  close: () => void
+  close: () => void,
 ) {
   let triggerElement: HTMLButtonElement | undefined
 

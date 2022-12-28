@@ -30,7 +30,7 @@ export function getHeaders(pageOutline: DefaultTheme.Config['outline']) {
 
 export function resolveHeaders(
   headers: MenuItem[],
-  levelsRange: Exclude<DefaultTheme.Config['outline'], false> = 2
+  levelsRange: Exclude<DefaultTheme.Config['outline'], false> = 2,
 ) {
   const levels: [number, number] =
     typeof levelsRange === 'number'
@@ -60,7 +60,7 @@ function groupHeaders(headers: MenuItem[], levelsRange: [number, number]) {
 function addToParent(
   currIndex: number,
   headers: MenuItem[],
-  levelsRange: [number, number]
+  levelsRange: [number, number],
 ) {
   if (currIndex === 0) {
     return true
@@ -86,7 +86,7 @@ function addToParent(
 
 export function useActiveAnchor(
   container: Ref<HTMLElement>,
-  marker: Ref<HTMLElement>
+  marker: Ref<HTMLElement>,
 ) {
   const { isAsideEnabled } = useAside()
 
@@ -114,7 +114,7 @@ export function useActiveAnchor(
     }
 
     const links = [].slice.call(
-      container.value.querySelectorAll('.outline-link')
+      container.value.querySelectorAll('.outline-link'),
     ) as HTMLAnchorElement[]
 
     const anchors = [].slice
@@ -156,7 +156,7 @@ export function useActiveAnchor(
 
     if (hash !== null) {
       prevActiveLink = container.value.querySelector(
-        `a[href="${decodeURIComponent(hash)}"]`
+        `a[href="${decodeURIComponent(hash)}"]`,
       )
     }
 
@@ -180,7 +180,7 @@ function getAnchorTop(anchor: HTMLAnchorElement): number {
 function isAnchorActive(
   index: number,
   anchor: HTMLAnchorElement,
-  nextAnchor: HTMLAnchorElement | undefined
+  nextAnchor: HTMLAnchorElement | undefined,
 ): [boolean, string | null] {
   const scrollTop = window.scrollY
 

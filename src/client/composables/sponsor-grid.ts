@@ -103,7 +103,7 @@ function manageSlots(
   el: HTMLElement,
   grid: number,
   tsize: number,
-  asize: number
+  asize: number,
 ) {
   const diff = tsize - asize
   const rem = asize % grid
